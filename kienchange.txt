@@ -1,3 +1,2 @@
 hello1
-kien hello 
-cuong hello
+kien hello
