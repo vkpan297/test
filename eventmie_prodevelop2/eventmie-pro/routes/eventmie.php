@@ -408,7 +408,12 @@ Route::group([
         $contestVideocontroller = $namespace.'\ContestVideoController';
 
         Route::get('/', "$contestcontroller@index")->name('contest.index');
-        Route::get('/video', "$contestVideocontroller@show")->name('contestvideo.index');
+        Route::get('/add', "$contestVideocontroller@addVideo")->name('contest.add');
+        Route::get('/video', "$contestVideocontroller@index")->name('contestvideo.index');
+
+        Route::get('/video/detail', "$contestVideocontroller@detail")->name('contestvideo.detail');
+
+        Route::post('/store', "$contestVideocontroller@storeVideo")->name('contestvideo.store');
     });
 
 

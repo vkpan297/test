@@ -30,23 +30,9 @@ class ContestController extends Controller
         $this->contest       = new Contest;
     }
 
-    // public function index(Request $request, $view = 'eventmie::contest.index', $extra = []){
-    //     $listContest = $this->contest->all();
-
-    //     return Eventmie::view($view, compact('listContest'));
-    // }
-
-    public function index($view = 'eventmie::contest.customer_bookings', $extra = [])
-    {
-        // get prifex from eventmie config
-        $path = false;
-        if(!empty(config('eventmie.route.prefix')))
-            $path = config('eventmie.route.prefix');
-
-        // if have booking email data then send booking notification
-        $is_success = !empty(session('booking_email_data')) ? 1 : 0;
-
-        return Eventmie::view($view, compact('path', 'is_success','extra'));
+    public function index(Request $request, $view = 'eventmie::contest.index', $extra = []){
+        $listContest = $this->contest->latest()->paginate(10);
+        return Eventmie::view($view, compact('listContest'));
     }
 
 }

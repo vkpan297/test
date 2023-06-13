@@ -1,8 +1,8 @@
 @extends('eventmie::layouts.app')
 
-{{-- @section('title')
-    @lang('eventmie-pro::em.blogs')
-@endsection --}}
+@section('title')
+    @lang('eventmie-pro::em.myvideocontest')
+@endsection
 
 @section('content')
 
@@ -12,43 +12,33 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        @if (!empty($listContestVideoByContestId))
+                        @if (count($listContestVideoByContestId) !== 0)
                             @foreach ($listContestVideoByContestId as $item)
+                                <?php
+                                    // $video_id = explode("?v=", $item['link_video']);
+                                    // $video_id = $video_id[1];
+                                    // $thumbnail="http://img.youtube.com/vi/".$video_id."/maxresdefault.jpg";
+                                ?>
                                 <div class="col-12 col-sm-6 col-lg-4">
-                                    <div class="lgx-event"><a href="http://127.0.0.1:8000/events/digital-marketing-seminar">
+                                    <div class="lgx-event"><a href="{{ route('eventmie.contestvideo.detail') }}?video={{ $item['id'] }}">
                                             <div class="lgx-event__tag"><span>Ended</span> <span>Event</span></div>
-                                            <div class="lgx-event__image"><img
-                                                    src="/storage/events/September2019/1568624877YMeQtcWsib.jpg"
+                                            <div class="lgx-event__image">
+                                                <img src="{{ $item['link_video'] }}"
                                                     alt=""></div>
                                             <div class="lgx-event__info">
                                                 <!---->
                                                 <div class="lgx-event__featured-left"><span>Free</span></div>
-                                                <div class="meta-wrapper"><span> 25 Nov 2022</span> <span>25 Nov 2023
-                                                    </span> <span>Nagano</span></div>
-                                                <h3 class="title">Digital Marketing Seminar</h3>
-                                                <h5 class="sub-title" style="height: 40px;">Resolution diminution conviction
-                                                    so mr at unpleasing simplicity</h5>
-                                                <h5 class="sub-title text-primary" style="height: 40px;">@History Museum
-                                                </h5>
+                                                <div class="meta-wrapper"><span>{{ date('d M Y', strtotime($item['created_at'])) }}</span></div>
+                                                <h3 class="title">{{ $item['title'] }}</h3>
+                                                <h5 class="sub-title" style="height: 40px;">{{ strip_tags($item['description']) }}</h5>
                                             </div>
-                                            <div class="lgx-event__footer">
-                                                <div>
-                                                    Free : Free
-                                                </div>
-                                                <div>
-                                                    Early Bird : 10.00 USD
-                                                </div>
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                                <!---->
-                                            </div>
-                                            <div class="lgx-event__category"><span>Business &amp; Seminars</span></div>
+
                                         </a></div>
                                 </div>
                             @endforeach
+                                <div class="col-md-12">
+                                    {{ $listContestVideoByContestId -> links() }}
+                                </div>
                         @else
                             <div class="col-md-12">
                                 <h4 class="text-center">@lang('eventmie-pro::em.nothing')</h4>

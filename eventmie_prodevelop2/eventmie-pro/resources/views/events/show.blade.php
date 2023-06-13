@@ -7,7 +7,7 @@
 @section('meta_image', '/storage/'.$event['thumbnail'])
 @section('meta_url', url()->current())
 
-    
+
 @section('content')
 
 <!--BANNER-->
@@ -48,17 +48,17 @@
                             <div class="lgx-banner-info-circle lgx-info-circle">
                                 <div class="info-circle-inner" style="background-image: url({{ eventmie_asset('img/bg-wave-circle.png') }});">
                                     <h3 class="date">
-                                        
-                                        {{ userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', 'd') }} 
+
+                                        {{ userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', 'd') }}
 
                                         <span>
                                             {{ userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', 'M-Y') .showTimezone()}}
-                                            
+
                                         </span>
                                     </h3>
                                     <div class="lgx-countdown-area">
                                         <!-- Date Format :"Y/m/d" || For Example: 1017/10/5  -->
-                                        <div id="lgx-countdown" 
+                                        <div id="lgx-countdown"
                                             data-date="{{userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', 'Y/m/d')}}">
                                         </div>
                                     </div>
@@ -75,7 +75,7 @@
                                     @if(!empty($event['online_location']))
                                         <span class="lgx-badge lgx-badge-online"><i class="fas fa-signal"></i>&nbsp; @lang('eventmie-pro::em.online_event')</span>
                                     @endif
-                                    
+
                                     <span class="lgx-badge lgx-badge-primary">{{ $category['name'] }}</span>
 
                                     @if(!empty($free_tickets))
@@ -87,19 +87,19 @@
                                             <span class="lgx-badge lgx-badge-primary">
                                                 @lang('eventmie-pro::em.repetitive_daily_event')
                                             </span>
-                                        @elseif($event->repetitive_type == 2)    
+                                        @elseif($event->repetitive_type == 2)
                                             <span class="lgx-badge lgx-badge-primary">
                                                 @lang('eventmie-pro::em.repetitive_weekly_event')
                                             </span>
-                                        @elseif($event->repetitive_type == 3)    
+                                        @elseif($event->repetitive_type == 3)
                                             <span class="lgx-badge lgx-badge-primary">
                                                 @lang('eventmie-pro::em.repetitive_monthly_event')
                                             </span>
-                                        @endif    
-                                        
+                                        @endif
+
                                     @endif
-                                    
-                                    @if($ended)   
+
+                                    @if($ended)
                                         <span class="lgx-badge lgx-badge-danger">@lang('eventmie-pro::em.event_ended')</span>
                                     @endif
                                 </h3>
@@ -116,7 +116,7 @@
                                 </h3>
 
                                 <a class="lgx-btn lgx-btn-red mt-2" href="#buy-tickets"><i class="fas fa-ticket-alt"></i> @lang('eventmie-pro::em.get_tickets')</a>
-                                
+
                             </div>
                             <div class="lgx-about-content">{!! $event['description'] !!}</div>
                         </div>
@@ -135,7 +135,7 @@
                                         @if(!empty($event['online_location']))
                                             <strong>@lang('eventmie-pro::em.online_event')</strong> <br>
                                         @endif
-                                        
+
                                         @if($event->venues->isNotEmpty())
                                         <a class="col-white" href="{{ route('eventmie.myvenues.show',[$event->venues[0]->id] ) }}"><strong>{{$event->venue}} <i class="fas fa-external-link-alt"></i></strong> </a>
                                         @else
@@ -143,23 +143,23 @@
                                         @endif
 
                                         <br>
-                                        
+
                                         @if($event->address)
                                         {{$event->address}} {{ $event->zipcode }} <br>
                                         @endif
-                                        
+
                                         @if($event->city)
-                                        {{ $event->city }}, 
+                                        {{ $event->city }},
                                         @endif
-                                        
+
                                         @if($event->state)
-                                        {{ $event->state }}, 
+                                        {{ $event->state }},
                                         @endif
-                                        
+
                                         @if($country)
                                             {{ $country->get('country_name') }}
                                         @endif
-                                    
+
                                     </p>
                                 </div>
                             </div>
@@ -171,7 +171,7 @@
                                  <div class="text-area">
                                     <span class="icon col-white"><i class="fas fa-stopwatch" aria-hidden="true"></i></span>
                                     <h2 class="title col-white">@lang('eventmie-pro::em.when')</h2>
-                                    
+
                                     @if(!$event->repetitive)
                                     <p>
                                         {{ userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', format_carbon_date(false)) }}
@@ -187,14 +187,14 @@
                                     @else
                                     <p>
                                         {{ userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', format_carbon_date(true)) }}
-                                        
+
                                         <br>@lang('eventmie-pro::em.till')<br>
-                                        
+
                                         {{ userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', 'Y-m-d') <= userTimezone($event->end_date.' '.$event->end_time, 'Y-m-d H:i:s', 'Y-m-d') ? userTimezone($event->end_date.' '.$event->end_time, 'Y-m-d H:i:s', format_carbon_date(true)) : userTimezone($event->start_date.' '.$event->start_time, 'Y-m-d H:i:s', format_carbon_date(true))}}
-                                        
+
                                     </p>
                                     @endif
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -221,10 +221,10 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
-                    <select-dates 
-                        :event="{{ json_encode($event, JSON_HEX_APOS) }}" 
+                    <select-dates
+                        :event="{{ json_encode($event, JSON_HEX_APOS) }}"
                         :max_ticket_qty="{{ json_encode($max_ticket_qty, JSON_HEX_APOS) }}"
                         :login_user_id="{{ json_encode(\Auth::id(), JSON_HEX_APOS) }}"
                         :is_customer="{{ Auth::id() ? (Auth::user()->hasRole('customer') ? 1 : 0) : 1 }}"
@@ -303,7 +303,7 @@
                 @foreach($group as $key1 => $value)
                     <div class="col-xs-12 col-sm-6 col-md-4">
                         <div class="lgx-single-speaker">
-                                
+
                                 @if($value['is_page'] > 0)
                                 <a href="{{ route('eventmie.events_tags',[$event->slug, str_replace(' ', '-', $value['title'])] ) }}">
                                 @elseif($value['website'])
@@ -319,7 +319,7 @@
                                 @if($value['is_page'] > 0 || $value['website'])
                                 </a>
                                 @endif
-                            <figure>    
+                            <figure>
                                 <figcaption>
                                     @if($value['is_page'] > 0)
                                     <div class="social-group">
@@ -421,8 +421,8 @@
 <!--GOOGLE MAP-->
 @if($event->latitude && $event->longitude)
 <div class="innerpage-section g-map-wrapper">
-    <div class="lgxmapcanvas map-canvas-default"> 
-        
+    <div class="lgxmapcanvas map-canvas-default">
+
         <g-component :lat="{{ json_encode($event->latitude, JSON_HEX_APOS) }}" :lng="{{ json_encode($event->longitude, JSON_HEX_APOS) }}" >
         </g-component>
 
@@ -439,6 +439,6 @@
 
 <script type="text/javascript">
     var google_map_key = {!! json_encode( $google_map_key) !!};
-    
+
 </script>
 @stop

@@ -64,8 +64,11 @@
         <li>
             <a class="dropdown-item" href="{{ route('eventmie.profile') }}"><i class="fas fa-id-card"></i> @lang('eventmie-pro::em.profile')</a>
         </li>
-        <li>
+        <!--<li>
             <a class="dropdown-item" href="{{ route('eventmie.mybookings_index') }}"><i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.mybookings')</a>
+        </li>-->
+        <li>
+            <a class="dropdown-item" href="{{ route('eventmie.contest.index') }}"><i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.mycontest')</a>
         </li>
         @endif
 
@@ -156,8 +159,14 @@
 
 {{-- Customer --}}
 @if(Auth::user()->hasRole('customer'))
-<li class="hide-ipad">
+<!--<li class="hide-ipad">
     <a class="lgx-scroll" href="{{ route('eventmie.mybookings_index') }}">
     <i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.mybookings')</a>
+</li>-->
+<li>
+    <a class="dropdown-item" href="{{ route('eventmie.contest.add') }}"><i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.addvideocontest')</a>
+</li>
+<li>
+    <a class="dropdown-item" href="{{ route('eventmie.contest.index') }}"><i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.mycontest')</a>
 </li>
 @endif
