@@ -47,11 +47,13 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <h3 class="title" style="margin: 0"><strong>TITLE:</strong> {{ $videotItem['title'] }}</h3>
-                                        <h3 class="author" style="margin: 0"><strong>AUTHOR:</strong> {{ $user['name'] ? $user['name'] : '' }}</h3>
-                                        <h3 class="vote" style="margin: 0"><strong>VOTES:</strong> {{ $videotItem['vote_count'] }}</h3>
+                                        <br>
+                                        <h5 class="title" style="margin: 0"><strong>TITLE: </strong> {{ $videotItem['title'] }}</h3>
+                                        <h5 class="author" style="margin: 0"><strong>AUTHOR: </strong> {{ $user['name'] ? $user['name'] : '' }}</h3>
+                                        <h5 class="vote" style="margin: 0"><strong>VOTES: </strong> {{ $videotItem['vote_count'] }}</h3>
                                     </div>
                                 </header>
+                                <br>
                                 <section>
                                     <p><strong>Description: </strong>{{ strip_tags($videotItem['description']) }}
                                     </p>
@@ -60,9 +62,27 @@
                         </div>
                     </div>
                 </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
                 <script>
-                    $( ".pc-image-info-box-button-btn" ).on( "click", function() {
-                        alert( "Handler for `click` called." );
+                    $(".pc-image-info-box-button-btn" ).on( "click", function() {
+                        $.ajax({
+                            url: $('#home_url').val()+'/contest/api/updatevote',
+                            type: 'POST',
+                            data: {
+                                _token: "{{ csrf_token() }}",
+                                id: "{{ $videotItem['id'] }}",
+                            },
+                            success: function(response) {
+                                // console.log(response); // Gửi kết quả thành công qua promise
+                                // $data = JSON.parse(response);
+                                console.log(response);
+                                // $(".pc-image-info-box-button-btn" ).css('background-color',$data['color']);
+                                // $(".pc-image-info-box-button-btn-text").html($data['msg']);
+                            },
+                            error: function(xhr, status, error) {
+                                console.log(error); // Gửi lỗi qua promise
+                            }
+                        });
                     } );
                 </script>
             </section>

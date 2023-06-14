@@ -12,18 +12,18 @@ use Classiebit\Eventmie\Models\Commission;
 use Classiebit\Eventmie\Scopes\BulkScope;
 use Illuminate\Database\Eloquent\Builder;
 
-class Contest extends Model
+class ContestVote extends Model
 {
     protected $guarded = [];
 
     /**
      * Table used
     */
-    protected $table = 'contest';
+    protected $table = 'contest_vote';
 
     // make booking
-    public function make_booking($params = [])
+    public function make_contest_vote($params = [])
     {
-        return Contest::create($params);
+        return ContestVote::create($params);
     }
 }

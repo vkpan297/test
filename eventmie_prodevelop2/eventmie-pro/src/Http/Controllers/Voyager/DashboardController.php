@@ -10,7 +10,7 @@ use Illuminate\Http\Response;
 use Classiebit\Eventmie\Models\Event;
 use Classiebit\Eventmie\Models\User;
 use Classiebit\Eventmie\Models\Booking;
-use Classiebit\Eventmie\Models\Contest;
+
 use Classiebit\Eventmie\Charts\EventChart;
 use Classiebit\Eventmie\Models\Notification;
 use Yajra\Datatables\Datatables;
@@ -25,7 +25,6 @@ class DashboardController extends VoyagerBaseController
 
         $this->event         = new Event; 
         $this->booking       = new Booking;
-        $this->contest       = new Contest;
         $this->notification  = new Notification;
         $this->user          = new User;
         $this->dashboard_service = new Dashboard;

@@ -15,9 +15,9 @@
                                     <a href="{{route('eventmie.welcome')}}"><i class="fas fa-home"></i></a>
                                 </li>
 
-                                @php 
+                                @php
                                     $i_count = 1;
-                                    if(config('eventmie.route.prefix')) 
+                                    if(config('eventmie.route.prefix'))
                                     {
                                         $i_count = 2;
                                         $prefix_count = count(explode('/', config('eventmie.route.prefix')));
@@ -25,29 +25,40 @@
                                             $i_count = $prefix_count+1;
                                     }
                                 @endphp
-                                
+
                                 @for($i = $i_count; $i <= count(Request::segments()); $i++)
-                                    @if($i != count(Request::segments()) )
-                                        <li>
-                                            <a href="{{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}">
+                                        @if($i != count(Request::segments()) )
+                                            <li>
+                                                @if(Request::segment($i) == "video")
+                                                    <a href="{{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}?{{ session('paramVideo') }}={{ session(session('paramVideo')) }}">
+                                                        {{-- translate if variable exists  --}}
+                                                        @if(\Lang::has('eventmie-pro::em.'.strtolower(Request::segment($i))))
+                                                            @lang('eventmie-pro::em.'.strtolower(Request::segment($i)))
+                                                        @else
+                                                            {{ strtoupper(Request::segment($i)) }}
+                                                        @endif
+                                                    </a>
+                                                @else
+                                                    <a href="{{ URL::to( implode( '/', array_slice(Request::segments(), 0 ,$i, true)))}}">
+                                                        {{-- translate if variable exists  --}}
+                                                        @if(\Lang::has('eventmie-pro::em.'.strtolower(Request::segment($i))))
+                                                            @lang('eventmie-pro::em.'.strtolower(Request::segment($i)))
+                                                        @else
+                                                            {{ strtoupper(Request::segment($i)) }}
+                                                        @endif
+                                                    </a>
+                                                @endif
+                                            </li>
+                                        @else
+                                            <li class="active">
                                                 {{-- translate if variable exists  --}}
-                                                @if(\Lang::has('eventmie-pro::em.'.strtolower(Request::segment($i)))) 
+                                                @if(\Lang::has('eventmie-pro::em.'.strtolower(Request::segment($i))))
                                                     @lang('eventmie-pro::em.'.strtolower(Request::segment($i)))
-                                                @else 
+                                                @else
                                                     {{ strtoupper(Request::segment($i)) }}
                                                 @endif
-                                            </a>
-                                        </li>
-                                    @else
-                                        <li class="active">
-                                            {{-- translate if variable exists  --}}
-                                            @if(\Lang::has('eventmie-pro::em.'.strtolower(Request::segment($i)))) 
-                                                @lang('eventmie-pro::em.'.strtolower(Request::segment($i)))
-                                            @else 
-                                                {{ strtoupper(Request::segment($i)) }}
-                                            @endif
-                                        </li>
-                                    @endif    
+                                            </li>
+                                        @endif
                                 @endfor
                             </ol>
                         </div>

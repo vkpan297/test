@@ -134,10 +134,10 @@
 
 {{-- Admin --}}
 @if(Auth::user()->hasRole('admin'))
-<li class="hide-ipad">
+<!--<li class="hide-ipad">
     <a class="lgx-scroll" href="{{ route('eventmie.ticket_scan') }}">
     <i class="fas fa-qrcode"></i> @lang('eventmie-pro::em.scan_ticket')</a>
-</li>
+</li>-->
 <li class="hide-ipad">
     <a class="lgx-scroll" href="{{ route('eventmie.myevents_form') }}">
     <i class="fas fa-calendar-plus"></i> @lang('eventmie-pro::em.create_event')</a>
@@ -146,10 +146,10 @@
 
 {{-- Organiser --}}
 @if(Auth::user()->hasRole('organiser'))
-<li class="hide-ipad">
+<!--<li class="hide-ipad">
     <a class="lgx-scroll" href="{{ route('eventmie.ticket_scan') }}">
     <i class="fas fa-qrcode"></i> @lang('eventmie-pro::em.scan_ticket')</a>
-</li>
+</li>-->
 <li class="hide-ipad">
     <a class="lgx-scroll" href="{{ route('eventmie.myevents_form') }}">
     <i class="fas fa-calendar-plus"></i> @lang('eventmie-pro::em.create_event')</a>
@@ -163,9 +163,9 @@
     <a class="lgx-scroll" href="{{ route('eventmie.mybookings_index') }}">
     <i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.mybookings')</a>
 </li>-->
-<li>
+<!--<li>
     <a class="dropdown-item" href="{{ route('eventmie.contest.add') }}"><i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.addvideocontest')</a>
-</li>
+</li>-->
 <li>
     <a class="dropdown-item" href="{{ route('eventmie.contest.index') }}"><i class="fas fa-money-check-alt"></i> @lang('eventmie-pro::em.mycontest')</a>
 </li>

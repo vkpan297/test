@@ -14,9 +14,9 @@
                             <table class="table table-striped table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Order Id</th>
-                                        <th>Event</th>
-                                        <th>Booked On </th>
+                                        <th>Reg Id</th>
+                                        <th>Contests</th>
+                                        <th>Registered On</th>
                                         <th></th>
                                     </tr>
                                 </thead>

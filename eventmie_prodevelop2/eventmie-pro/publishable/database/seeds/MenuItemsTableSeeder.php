@@ -41,14 +41,14 @@ class MenuItemsTableSeeder extends Seeder
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-calendar", "color" => "#000000", "parent_id" => null, "order" => "4", ])->save();
         }
 
-        // // Bookings
-        // $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Bookings", "url" => "", "route" => "voyager.bookings.index", ]);
-        // if (!$menuItem->exists) {
-        //     $menuItem->fill(["target" => "_self", "icon_class" => "voyager-dollar", "color" => "", "parent_id" => null, "order" => "5", ])->save();
-        // }
+        // Bookings
+        $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Bookings", "url" => "", "route" => "voyager.bookings.index", ]);
+        if (!$menuItem->exists) {
+            $menuItem->fill(["target" => "_self", "icon_class" => "voyager-dollar", "color" => "", "parent_id" => null, "order" => "5", ])->save();
+        }
 
         // Contests
-        $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Contests", "url" => "", "route" => "voyager.contest.index", ]);
+        $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Contests", "url" => "", "route" => "voyager.contests.index", ]);
         if (!$menuItem->exists) {
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-dollar", "color" => "", "parent_id" => null, "order" => "5", ])->save();
         }
@@ -100,19 +100,19 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItem->exists) {
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-news", "color" => "#000000", "parent_id" => null, "order" => "13", ])->save();
         }
-        
+
         // Header Menu
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Header Menu", "url" => "", "route" => "voyager.menus.builder", "parameters" => 2 ]);
         if (!$menuItem->exists) {
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-list", "color" => "#000000", "parent_id" => null, "order" => "13", ])->save();
         }
-        
+
         // Footer Menu
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Footer Menu", "url" => "", "route" => "voyager.menus.builder", "parameters" => 3 ]);
         if (!$menuItem->exists) {
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-list", "color" => "#000000", "parent_id" => null, "order" => "13", ])->save();
         }
-        
+
         // Venues
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Venues", "url" => "", "route" => "voyager.venues.index", ]);
         if (!$menuItem->exists) {
@@ -128,7 +128,7 @@ class MenuItemsTableSeeder extends Seeder
 
         /* Extra header menu items */
         $menu = Menu::where('name', 'header')->firstOrFail();
-        
+
         // Parent
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Popular Events", "url" => "#", "route" => null, ]);
         if (!$menuItem->exists) {
@@ -139,7 +139,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItemChild->exists) {
             $menuItemChild->fill(["target" => "_self", "icon_class" => "", "color" => "", "parent_id" => $menuItem->id, "order" => "1", ])->save();
         }
-        
+
         // parent
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Popular Blogs", "url" => "#", "route" => null, ]);
         if (!$menuItem->exists) {
@@ -154,7 +154,7 @@ class MenuItemsTableSeeder extends Seeder
 
         /* Extra footer menu items */
         $menu = Menu::where('name', 'footer')->firstOrFail();
-        
+
         // Parent
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Popular Links", "url" => "#", "route" => null, ]);
         if (!$menuItem->exists) {
@@ -166,7 +166,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItemChild->exists) {
             $menuItemChild->fill(["target" => "_self", "icon_class" => "", "color" => "", "parent_id" => $menuItem->id, "order" => "1", ])->save();
         }
-        
+
         // Parent
         $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Top Categories", "url" => "#", "route" => null, ]);
         if (!$menuItem->exists) {
@@ -177,7 +177,7 @@ class MenuItemsTableSeeder extends Seeder
         if (!$menuItemChild->exists) {
             $menuItemChild->fill(["target" => "_self", "icon_class" => "", "color" => "", "parent_id" => $menuItem->id, "order" => "1", ])->save();
         }
-        
+
     }
 
     protected function menuItem($field, $for)

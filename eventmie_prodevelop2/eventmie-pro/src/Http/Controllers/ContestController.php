@@ -25,14 +25,19 @@ class ContestController extends Controller
         $this->middleware('common');
 
         // authenticate except
-        $this->middleware('auth')->except(['login_first', 'signup_first']);
+        // $this->middleware('auth')->except(['login_first', 'signup_first']);
+
 
         $this->contest       = new Contest;
     }
 
-    public function index(Request $request, $view = 'eventmie::contest.index', $extra = []){
-        $listContest = $this->contest->latest()->paginate(10);
-        return Eventmie::view($view, compact('listContest'));
+    public function index(Request $request, $view = 'eventmie::contest.index', $extra = [], $event = '', $listContestVideoByContestId = [], $mysubmission = []){
+        if (Auth::check()) {
+            $listContest = $this->contest->latest()->paginate(10);
+            return Eventmie::view($view, compact('listContest'));
+        }else{
+            return redirect()->route('eventmie.contestvideo.index');
+        }
     }
 
 }

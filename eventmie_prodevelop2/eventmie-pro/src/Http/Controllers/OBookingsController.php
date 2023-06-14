@@ -11,7 +11,6 @@ use Auth;
 use Classiebit\Eventmie\Models\Event;
 use Classiebit\Eventmie\Models\Ticket;
 use Classiebit\Eventmie\Models\Booking;
-use Classiebit\Eventmie\Models\Contest;
 use Classiebit\Eventmie\Models\Transaction;
 use Classiebit\Eventmie\Models\Commission;
 use Classiebit\Eventmie\Models\User;
@@ -37,7 +36,6 @@ class OBookingsController extends Controller
         $this->event        = new Event;
         $this->ticket       = new Ticket;
         $this->booking      = new Booking;
-        $this->contest      = new Contest;
         $this->transaction  = new Transaction;
         $this->commission   = new Commission;
     }

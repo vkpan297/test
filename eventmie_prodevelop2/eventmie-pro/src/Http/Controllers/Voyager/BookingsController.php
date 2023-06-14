@@ -29,10 +29,10 @@ class BookingsController extends VoyagerBaseController
         // disable modification functions that are not managed from admin panel
         $route_name     = "voyager.bookings";
         $enable_routes = [
-            "$route_name.index", 
-            "$route_name.show", 
-            "$route_name.edit", 
-            "$route_name.update", 
+            "$route_name.index",
+            "$route_name.show",
+            "$route_name.edit",
+            "$route_name.update",
             "$route_name.destroy",
         ];
         if(! in_array(\Route::current()->getName(), $enable_routes))
@@ -41,7 +41,7 @@ class BookingsController extends VoyagerBaseController
         }
         // ---------------------------------------------------------------------
 
-        $this->commission   = new Commission;  
+        $this->commission   = new Commission;
     }
 
     //***************************************
@@ -184,25 +184,9 @@ class BookingsController extends VoyagerBaseController
 
         // if have booking email data then send booking notification
         $is_success = !empty(session('booking_email_data')) ? 1 : 0;
-        
+
         $view = 'eventmie::vendor.voyager.bookings.browse';
-        // return response()->json([
-        //     'actions' => $actions,
-        //     'dataType' => $dataType,
-        //     'dataTypeContent' => $dataTypeContent,
-        //     'isModelTranslatable' => $isModelTranslatable,
-        //     'search' => $search,
-        //     'orderBy' => $orderBy,
-        //     'orderColumn' => $orderColumn,
-        //     'sortOrder' => $sortOrder,
-        //     'searchNames' => $searchNames,
-        //     'isServerSide' => $isServerSide,
-        //     'defaultSearchKey' => $defaultSearchKey,
-        //     'usesSoftDeletes' => $usesSoftDeletes,
-        //     'showSoftDeleted' => $showSoftDeleted,
-        //     'showCheckboxColumn' => $showCheckboxColumn,
-        //     'is_success' => $is_success
-        // ], 200);
+
         return Eventmie::view($view, compact(
             'actions',
             'dataType',
@@ -222,9 +206,9 @@ class BookingsController extends VoyagerBaseController
         ));
     }
 
-    
 
-     
+
+
     // POST BR(E)AD
     public function update(Request $request, $id)
     {
@@ -255,16 +239,16 @@ class BookingsController extends VoyagerBaseController
 
 
         // extra data update ========================================================================
-        
+
         $params = [
             'booking_id'       => $id,
             'organiser_id'     => $data->organiser_id,
             'status'           => $request->status == "on" ? 1 : 0,
         ];
-        
-        // edit commision table status when change booking table status change by organiser 
-        $edit_commission  = $this->commission->edit_commission($params);    
-        
+
+        // edit commision table status when change booking table status change by organiser
+        $edit_commission  = $this->commission->edit_commission($params);
+
         if(empty($edit_commission))
             return error('Commission not found!', Response::HTTP_BAD_REQUEST );
         // extra data update ========================================================================
@@ -283,6 +267,6 @@ class BookingsController extends VoyagerBaseController
         ]);
     }
 
-    
-    
+
+
 }

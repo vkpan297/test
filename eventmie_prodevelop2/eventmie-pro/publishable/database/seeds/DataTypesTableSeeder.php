@@ -106,7 +106,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"title","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'event';
         $slug           = 'events';
         $dataType       = $this->dataType('slug', $slug);
@@ -127,7 +127,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"title","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'category';
         $slug           = 'categories';
         $dataType       = $this->dataType('slug', $slug);
@@ -148,7 +148,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"name","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'tax';
         $slug           = 'taxes';
         $dataType       = $this->dataType('slug', $slug);
@@ -169,7 +169,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"title","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'banner';
         $slug           = 'banners';
         $dataType       = $this->dataType('slug', $slug);
@@ -190,7 +190,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"title","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'contact';
         $slug           = 'contacts';
         $dataType       = $this->dataType('slug', $slug);
@@ -211,7 +211,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"name","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'booking';
         $slug           = 'bookings';
         $dataType       = $this->dataType('slug', $slug);
@@ -232,9 +232,9 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"event_title","scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'contest';
-        $slug           = 'contest';
+        $slug           = 'contests';
         $dataType       = $this->dataType('slug', $slug);
         // if (!$dataType->exists) {
             $dataType->fill([
@@ -253,7 +253,6 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"event_title","scope":null}'),
             ])->save();
         // }
-        
 
         $singular       = 'commission';
         $slug           = 'commissions';
@@ -275,7 +274,7 @@ class DataTypesTableSeeder extends Seeder
                 'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":null,"scope":null}'),
             ])->save();
         // }
-        
+
         $singular       = 'tag';
         $slug           = 'tags';
         $dataType       = $this->dataType('slug', $slug);
@@ -312,7 +311,7 @@ class DataTypesTableSeeder extends Seeder
             $dataType->fill([
                 'name'                  => $slug,
                 'slug'                  => $slug,
-                
+
                 'display_name_singular' => ucfirst($singular),
                 'display_name_plural'   => ucfirst($slug),
 
