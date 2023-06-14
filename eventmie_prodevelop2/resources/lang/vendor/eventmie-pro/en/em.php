@@ -1,6 +1,6 @@
 <?php
 return [
-    /* xxxXXXxxx NO NEED TO TRANSLATE THESE xxxXXXxxx */
+    /* xxxXXXxxx NO NEED TO TRANSLATE THESE xxxXXXxxx */    
     "lang_en"                                => 'English',
     "lang_ar"                                => 'عربى',
     "lang_de"                                => 'Deutsche',
@@ -14,10 +14,10 @@ return [
     "lang_pt"                                => 'português',
     "lang_zh_CN"                             => '中国',
     "lang_zh_TW"                             => '中國',
-    /* xxxXXXxxx NO NEED TO TRANSLATE THESE xxxXXXxxx */
+    /* xxxXXXxxx NO NEED TO TRANSLATE THESE xxxXXXxxx */    
 
 
-
+    
 
     /* ================ Actions ================ */
     'reset'                             => 'Reset',
@@ -150,7 +150,6 @@ return [
     /* ================ Bookings ================ */
     'booking'                           => 'Booking',
     'bookings'                          => 'Bookings',
-    'contests'                          => 'Contests',
     'booked'                            => 'Booked',
     'order'                             => 'Order',
     'amount'                            => 'Amount',
@@ -165,7 +164,7 @@ return [
     'transaction'                       => 'Transaction',
     'tax'                               => 'Tax',
     'taxes'                             => 'Taxes',
-    'checkout'                          => 'Checkout',
+    'checkout'                          => 'Contest register',
     'out_of_stock'                      => 'Out of stock',
     'select_a_ticket'                   => 'Please select atleast one ticket',
     'bookings_over'                     => 'Bookings over',
@@ -178,7 +177,7 @@ return [
     'organiser_note_1'                  => 'Once you become organiser, you will not be able to become customer again.',
     'organiser_note_2'                  => 'Organisers can add and manage their own contest and cannot book any contest.',
     'organiser_note_3'                  => 'Organisers can book their contests for any customer (users) of the site.',
-    'organiser_note_4'                  => 'Organisers can manage bookings of their own contests only.',
+    'organiser_note_4'                  => 'Organisers can manage bookings of their own events only.',
     'organization'                      => 'Organization',
     'brand'                             => 'Brand',
     'identity'                          => 'Identity',
@@ -202,13 +201,13 @@ return [
     'repetitive'                        => 'Repetitive',
     'upcoming'                          => 'Upcoming',
     'ticket'                            => 'Ticket',
-    'tickets'                           => 'Tickets',
+    'tickets'                           => 'Bookings',
     'price'                             => 'Price',
     'prices'                            => 'Prices',
     'where'                             => 'Where',
     'when'                              => 'When',
-    'get_tickets'                       => 'Register for the contest now',
-    'select_schedule'                   => 'Click on a date to book tickets',
+    'get_tickets'                       => 'Register now',
+    'select_schedule'                   => 'Click on a date to register',
     'gallery'                           => 'Gallery',
     'watch'                             => 'Watch',
     'trailer'                           => 'Trailer',
@@ -283,7 +282,7 @@ return [
     'zoom_info'                         => 'Pinch/Scroll to zoom',
     'drag_info'                         => 'Drag Left/Right to adjust',
     'drag_drop'                         => 'Drag-n-Drop',
-    'gallery_info'                      => 'Upload images related to your Contest',
+    'gallery_info'                      => 'Upload images related to your Event',
     'video'                             => 'Video',
     'videos'                            => 'Videos',
     'invalid_file'                      => 'Invalid file type',
@@ -299,16 +298,16 @@ return [
     'organiser_3_info'                  => 'Start selling your contest tickets and earn profit.',
     'customer_1'                        => 'Choose Contest',
     'customer_1_info'                   => 'Signup, choose your favorite contest.',
-    'customer_2'                        => 'Get Tickets',
+    'customer_2'                        => 'Register',
     'customer_2_info'                   => 'Get your tickets from the contest page.',
     'customer_3'                        => 'Attend Contest',
     'customer_3_info'                   => 'Go attend the contest and have fun.',
 
     'accept_cookie'                     => 'This site uses cookies. By continuing to browse this website without changing the cookie settings of your Internet browser, you agree to our use of cookies. Further information about cookies can be found in our',
 
-
-
-
+    
+    
+    
     'day'                              => 'Day',
     'search_location'                  => 'Search Location',
     'organiser_note_5'                 => 'Organisers can book only their own contests for any customer.',
@@ -329,14 +328,14 @@ return [
     'verify_n_checkin'                 => 'Verify & Check-in',
 
     'bank_details'                     => 'Bank Details',
-    'bank_name'                        => 'Bank Name',
-    'bank_code'                        => 'Bank Code',
+    'bank_name'                        => 'Bank Name', 
+    'bank_code'                        => 'Bank Code',          
     'bank_branch_name'                 => 'Bank Branch Name',
     'bank_branch_code'                 => 'Bank Branch Code',
     'bank_account_number'              => 'Bank Account Number',
     'bank_account_name'                => 'Bank Account Name',
     'bank_account_phone'               => 'Bank Account Phone',
-
+    
     'tag'                              => 'Tag',
     'sub_title'                        => 'Sub title',
     'earning'                          => 'Earnings',
@@ -347,7 +346,7 @@ return [
     'page'                             => 'Page',
     'scan'                             => 'Scan',
     'share'                            => 'Share',
-
+    
     'sent'                             => 'Sent',
     'booking_mail'                     => 'Sending booking emails ...',
     'processing'                       => 'Processing ...',
@@ -358,7 +357,7 @@ return [
     'cash_on_arrival'                  => 'Cash on Arrival',
     'cart'                             => 'Shopping Cart',
     'user_disabled'                    => 'Account temporarily disabled! Contact Support!',
-
+    
     /* Calendar lang start*/
     'january'                           => 'January',
     'february'                          => 'February',
@@ -393,7 +392,7 @@ return [
     'thursday'                          => 'Thursday',
     'friday'                            => 'Friday',
     'saturday'                          => 'Saturday',
-
+    
     'sun'                               => 'Sun',
     'mon'                               => 'Mon',
     'tue'                               => 'Tue',
@@ -401,7 +400,7 @@ return [
     'thu'                               => 'Thu',
     'fri'                               => 'Fri',
     'sat'                               => 'Sat',
-
+    
     'su'                                => 'Su',
     'mo'                                => 'Mo',
     'tu'                                => 'Tu',
@@ -409,7 +408,7 @@ return [
     'th'                                => 'Th',
     'fr'                                => 'Fr',
     'sa'                                => 'Sa',
-
+    
     'am'                                => 'AM',
     'pm'                                => 'PM',
     /* Calendar lang end*/
@@ -461,7 +460,7 @@ return [
     'select_dates'                      => 'Select Dates',
     'select_taxes'                      => 'Select taxes',
     'each_day'                          => 'Each Day',
-    'mybookings'                        => 'My Bookings',
+    'mybookings'                        => 'My Contests',
     'myevents'                          => 'My Contests',
     'myearning'                         => 'My Earning',
     'mytags'                            => 'My Tags',
@@ -493,7 +492,7 @@ return [
     'total_bookings'                    => 'Total Bookings',
     'total_commission'                  => 'Total Commission',
     'total_profit'                      => 'Total Profit',
-    'search_event'                      => 'Search Contest',
+    'search_event'                      => 'Search',
     'search_event_by'                   => 'Type Contest Name/Venue/City/State',
     'date_filter'                       => 'Date Filter',
     'any_price'                         => 'Any Price',
@@ -538,12 +537,11 @@ return [
     'select_customer'                   => 'Select customer',
     'search_customer_email'             => 'Search customer email',
     'customer_not_found'                => 'Customer not found',
-    'booking_info'                      => 'Booking Info',
-    'contest_info'                      => 'Contest Info',
+    'booking_info'                      => 'Contest Info',
     'event_category'                    => 'Contest Category',
     'hide_info'                         => 'Hide info',
     'show_info'                         => 'Show info',
-    'total_tickets'                     => 'Total tickets',
+    'total_tickets'                     => 'Total bookings',
     'total_order'                       => 'Total order',
     'create_event'                      => 'Create Contest',
     'add_tag'                           => 'Add Tag',
@@ -552,12 +550,11 @@ return [
     'delete_tag_ask'                    => 'Do you want to delete tag?',
     'delete_tag_succcess'               => 'Tag deleted suceessfully',
     'scan_ticket'                       => 'Scan Ticket',
-    'browse_events'                     => 'Browse Contest',
+    'browse_events'                     => 'Browse Contests',
     'become_organiser'                  => 'Become Organiser',
     'organiser_bookings'                => 'Organiser Bookings',
     'manage_earning'                    => 'Manage Earning',
     'booking_details'                   => 'Booking Details',
-    'contest_details'                   => 'Contests Details',
     'ticket_price'                      => 'Ticket Price',
     'total_amount_paid'                 => 'Total Amount Paid',
     'payment_type'                      => 'Payment Type',
@@ -594,7 +591,7 @@ return [
     'event_categories'                  => 'Contest Categories',
     'view_all_blogs'                    => 'View All Blogs',
     'for_event_organisers'              => 'For Contest Organisers',
-    'for_customers'                     => 'For Customers',
+    'for_customers'                     => 'For Paticipants',
     'cities_events'                     => 'Explore Best Cities',
     'total_events'                      => 'Total Contests',
     'disabled_ticket'                   => 'Disabled Ticket!',
@@ -604,7 +601,7 @@ return [
     'admin_tax'                         => 'Admin Tax',
     'total_admin_commission'            => 'Total Admin Commission',
     'total_admin_tax'                   => 'Total Admin Tax',
-
+    
     /* v1.6 Lang */
     'booking_cancellation'              => 'Booking Cancellation',
     'calendar'                        => 'Add to Calendar',
@@ -636,7 +633,7 @@ return [
     'please_login_signup'             => 'Please Register or Login to continue',
     'excerpt'                         => 'Excerpt',
     'short_info'                      => 'Short Info',
-
+    
     /* v1.7 lang */
     'customer_limit'          => 'Booking Limit Per Customer',
     'customer_limit_info'     => 'For how many times the same customer can purchase this ticket. (leave blank for unlimited)',
@@ -644,21 +641,21 @@ return [
     'offline_payment_info'    => 'Offline Payment Instructions',
     'offline_payment_info_ie' => 'Instructions to show under Offline Payment Option',
     'expired'                 => 'Expired',
-
-    'rsvp'                    => 'R.S.V.P',
-
+    
+    'rsvp'                    => 'Register',
+    
     'accept_terms'            => 'By clicking "Register", I accept the <a href="'.route('eventmie.page', ['page'=>'terms']).'" target="_blank">Terms of Service</a> and have read the <a href="'.route('eventmie.page', ['page'=>'privacy']).'" target="_blank">Privacy Policy</a>. I agree that '.config('app.name').' may share my information with event organizers.',
     'order_terms'             => 'This order is subject to '.config('app.name').' <a href="'.route('eventmie.page', ['page'=>'terms']).'" target="_blank">Terms of Service</a> and <a href="'.route('eventmie.page', ['page'=>'privacy']).'" target="_blank">Privacy Policy</a>.',
 
     'incorrect_email_password' => 'Incorrect Email or Password',
-
-    // v1.8
+    
+    // v1.8 
     'unauthenticated'          => 'Unauthenticated',
     'manage_venues'            => 'Manage Venues',
     'venues'                   => 'Venues',
     'venue'                    => 'Venue',
     'myvenues'                 => 'My Venues',
-    'event_venues'             => 'Contest Venues',
+    'event_venues'             => 'Event Venues',
     'search_venues'            => 'Search Venues',
     'venues_not_found'         => 'Venues not found',
     'add_venue'                => 'Add Venue',
@@ -678,7 +675,7 @@ return [
     'contact_email'            => 'Contact Email',
     'delete_venue_succcess'    => 'Deleted Venue Successfully',
     'search_venue'             => 'Search Venues',
-    'event_venues'             => 'Contest Venues',
+    'event_venues'             => 'Event Venues',
     'venues_not_found'         => 'Venues Not Found',
     'browse_venues'            => 'Browse Venues',
     'slug'                     => 'Slug',
@@ -691,19 +688,10 @@ return [
     'number_of_guests'         => 'Number of Guests',
     'mention_query'            => 'Write about your query',
     'organizer_contact_back'   => 'Thank you for your message, we will get back to you shortly',
+    
 
-    'venue_title'           => 'Venue Title',
-    'venue_url'             => 'Venue URL',
-    'venue_image_deleted'   => 'Venue Image Deleted!',
-    'personal_details'      => 'Personal Details',
-    'stripe'                => 'Stripe',
-    'security'              => 'Security',
-    'organiser_info'        => 'Organiser Info',
-    'seller_info'           => 'Seller Info',
-    'mailChimp_integration' => 'MailChimp Integration',
-    'username'              => 'Username',
-    'description'           => 'Description',
-    'facebook'              => 'Facebook',
-    'avatar'                => 'Avatar'
-
+    
+    
+    
 ];
+
