@@ -29,6 +29,11 @@
             </div>
 
         </div>
+        <style>
+            #adminmenu ul li:nth-child(6){
+                display: none;
+            }
+        </style>
         <div id="adminmenu">
             <admin-menu :items="{{ menu('admin', '_json') }}"></admin-menu>
         </div>
