@@ -150,6 +150,7 @@ return [
     /* ================ Bookings ================ */
     'booking'                           => 'Booking',
     'bookings'                          => 'Bookings',
+    'contests'                          => 'Contests',
     'booked'                            => 'Booked',
     'order'                             => 'Order',
     'amount'                            => 'Amount',

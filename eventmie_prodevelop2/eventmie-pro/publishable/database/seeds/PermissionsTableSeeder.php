@@ -41,6 +41,7 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('banners');
         Permission::generateFor('contacts');
         Permission::generateFor('bookings');
+        Permission::generateFor('contest');
         Permission::generateFor('commissions');
         Permission::generateFor('tags');
         Permission::generateFor('venues');

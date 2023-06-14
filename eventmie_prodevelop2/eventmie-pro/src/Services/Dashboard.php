@@ -11,7 +11,7 @@ use Illuminate\Http\Response;
 use Classiebit\Eventmie\Models\Event;
 use Classiebit\Eventmie\Models\User;
 use Classiebit\Eventmie\Models\Booking;
-
+use Classiebit\Eventmie\Models\Contest;
 use Classiebit\Eventmie\Charts\EventChart;
 use Classiebit\Eventmie\Models\Notification;
 use Yajra\Datatables\Datatables;
@@ -25,6 +25,7 @@ class Dashboard extends Controller
     {
         $this->event         = new Event; 
         $this->booking       = new Booking;
+        $this->contest       = new Contest;
         $this->notification  = new Notification;
         $this->user          = new User;
     }
@@ -38,6 +39,7 @@ class Dashboard extends Controller
         $total_customers          = $this->user->total_customers($user_id);
         $total_events             = $this->event->total_event($user_id);
         $total_bookings           = $this->booking->total_bookings($user_id);
+        $total_contests           = $this->contest->total_contests($user_id);
         $total_revenue            = $this->booking->total_revenue($user_id);
         $total_notifications      = $this->notification->total_notifications($user_id);
         $events                   = $this->event->get_all_events([], $user_id);
@@ -66,7 +68,7 @@ class Dashboard extends Controller
             $isOrgDash = true;
         
         return Eventmie::view($view, compact(
-            'eventsChart', 'total_customers', 'total_organizers', 'total_bookings', 
+            'eventsChart', 'total_customers', 'total_organizers', 'total_bookings', 'total_contests',
             'total_revenue', 'total_notifications', 'total_events', 'events', 'isOrgDash'));
     }
 

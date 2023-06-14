@@ -58,5 +58,4 @@ class ContestVideoController extends Controller
         $videotItem=$this->contestvideo->find($request->video);
         return Eventmie::view($view, compact('videotItem'));
     }
-
 }

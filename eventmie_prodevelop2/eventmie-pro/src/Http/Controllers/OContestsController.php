@@ -19,7 +19,7 @@ use Classiebit\Eventmie\Notifications\MailNotification;
 
 
 
-class OBookingsController extends Controller
+class OContestsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -47,7 +47,7 @@ class OBookingsController extends Controller
      *
      * @return array
      */
-    public function index($view = 'eventmie::bookings.organiser_bookings', $extra = [])
+    public function index($view = 'eventmie::contest.organiser_bookings', $extra = [])
     {
         // get prifex from eventmie config
         $path = false;
@@ -111,7 +111,7 @@ class OBookingsController extends Controller
         ];
 
         // check booking id in booking table for organiser
-        $check_booking     = $this->booking->organiser_check_booking($params);
+        $check_booking     = $this->contest->organiser_check_booking($params);
 
         if(empty($check_booking))
             return error(__('eventmie-pro::em.booking').' '.__('eventmie-pro::em.not_found'), Response::HTTP_BAD_REQUEST );
@@ -147,7 +147,7 @@ class OBookingsController extends Controller
             'is_paid'          =>  $request->is_paid,
         ];
         // booking edit
-        $booking_edit    = $this->booking->organiser_edit_booking($data, $params);
+        $booking_edit    = $this->contest->organiser_edit_booking($data, $params);
 
         if(empty($booking_edit))
             return error(__('eventmie-pro::em.booking_cancellation_fail'), Response::HTTP_BAD_REQUEST );
@@ -213,7 +213,7 @@ class OBookingsController extends Controller
     }
 
     // view coustomer booking by oraganiser
-    public function organiser_bookings_show($id = null, $view = 'eventmie::bookings.show', $extra = [])
+    public function organiser_bookings_show($id = null, $view = 'eventmie::contest.show', $extra = [])
     {
         
         $id    = (int) $id;
@@ -231,7 +231,7 @@ class OBookingsController extends Controller
                 'id'  => $id,
             ];
 
-            $booking   = $this->booking->organiser_check_booking($params);
+            $booking   = $this->contest->organiser_check_booking($params);
             if(empty($booking))
                 // redirect no matter what so that it never turns back
                 return success_redirect(__('eventmie-pro::em.booking').' '.__('eventmie-pro::em.not_found'), route('eventmie.events_index'));  
@@ -245,7 +245,7 @@ class OBookingsController extends Controller
         ];
 
         // get customer booking by orgniser
-        $booking = $this->booking->organiser_view_booking($params);   
+        $booking = $this->contest->organiser_view_booking($params);   
     
         if(empty($booking))
         {
@@ -287,7 +287,7 @@ class OBookingsController extends Controller
             'id'     => $id,
         ];
 
-        $delete_booking     = $this->booking->delete_booking($params);
+        $delete_booking     = $this->contest->delete_booking($params);
 
         if(empty($delete_booking))
         {
@@ -297,7 +297,7 @@ class OBookingsController extends Controller
         $msg = __('eventmie-pro::em.booking_deleted');
         
         return redirect()
-        ->route("voyager.bookings.index")
+        ->route("voyager.contest.index")
         ->with([
             'message'    => $msg,
             'alert-type' => 'success',

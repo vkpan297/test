@@ -10,7 +10,6 @@ yarn-error.log
 
 # Vscode Specific files
 /.vscode
-
 /node_modules
 
 **/dist
