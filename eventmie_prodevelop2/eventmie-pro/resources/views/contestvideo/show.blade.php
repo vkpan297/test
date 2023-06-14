@@ -11,6 +11,9 @@
             <!--Blogs-->
             <section>
                 <div class="container">
+                    @if ($event != '')
+                    <h5 class="visible-lg visible-md"><a href="/events/{{ $event['slug'] }}">@lang('eventmie-pro::em.contestinfo')</a> / <a href="">@lang('eventmie-pro::em.submission')</a></h5>
+                    @endif
                     <div class="row">
                         @if (count($listContestVideoByContestId) !== 0)
                             @foreach ($listContestVideoByContestId as $item)
@@ -23,8 +26,13 @@
                                     <div class="lgx-event"><a href="{{ route('eventmie.contestvideo.detail') }}?video={{ $item['id'] }}">
                                             <div class="lgx-event__tag"><span>Ended</span> <span>Event</span></div>
                                             <div class="lgx-event__image">
-                                                <img src="{{ $item['link_video'] }}"
-                                                    alt=""></div>
+                                                @if ($item->poster != NULL)
+                                                    <img src="{{asset('storage/'.$item->poster)}}"
+                                                        alt="" style="width: 350px;height: 350px;"></div>
+                                                @else
+                                                    <img src=" /storage/events/September2019/1568624877YMeQtcWsib.jpg"
+                                                        alt="" style="width: 350px;height: 350px;"></div>
+                                                @endif
                                             <div class="lgx-event__info">
                                                 <!---->
                                                 <div class="lgx-event__featured-left"><span>Free</span></div>

@@ -41,6 +41,7 @@
     <div id="lgx-about" class="lgx-about">
         <div class="mt-30 mb-50 mt-mobile-0">
             <div class="container-fluid">
+                <h5 class="offset-md-1 visible-lg visible-md"><a href="{{ $event['slug'] }}">@lang('eventmie-pro::em.contestinfo')</a> / <a href="{{ eventmie_url() }}/contest/video?contest_id={{ $event['id'] }}">@lang('eventmie-pro::em.submission')</a></h5>
                 <div class="row">
 
                     <div class="col-md-4 offset-md-1 visible-lg visible-md">
@@ -115,7 +116,10 @@
                                     <span><a class="btn btn-sm" href="javascript:void(0)" onclick="copyToClipboard()"><i class="fas fa-link"></i></a></span>
                                 </h3>
 
-                                <a class="lgx-btn lgx-btn-red mt-2" href="#buy-tickets"><i class="fas fa-ticket-alt"></i> @lang('eventmie-pro::em.get_tickets')</a>
+                                <div class="row">
+                                    <a class="lgx-btn lgx-btn-red mt-2" href="#buy-tickets" style="margin: 0 15px;"><i class="fas fa-ticket-alt"></i> @lang('eventmie-pro::em.get_tickets')</a>
+                                    <a href="{{ eventmie_url() }}/contest/video?contest_id={{ $event['id'] }}" class="lgx-btn mt-2" style="margin: 0 15px;"><i class="fas fa-calendar-day"></i> @lang('eventmie-pro::em.submission')</a>
+                                </div>
 
                             </div>
                             <div class="lgx-about-content">{!! $event['description'] !!}</div>

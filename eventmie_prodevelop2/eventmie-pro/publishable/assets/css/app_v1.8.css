@@ -9675,3 +9675,13 @@ table.dataTable.no-footer {
 /* .lgx-header .menu-onscroll {
     background: #7CBFDA !important;
 } */
+
+.pc-image-info-box-button-btn{
+    background-color: #09F;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+}

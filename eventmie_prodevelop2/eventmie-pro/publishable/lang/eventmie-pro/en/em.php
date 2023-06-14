@@ -462,6 +462,8 @@ return [
     'each_day'                          => 'Each Day',
     'mybookings'                        => 'My Bookings',
     'mycontest'                        => 'My Contest',
+    'contestinfo'                        => 'Contest info',
+    'submission'                        => 'Submissions',
     'addvideocontest'                   => 'Add Video',
     'myvideocontest'                    => 'Video Contest',
     'myevents'                          => 'My Events',

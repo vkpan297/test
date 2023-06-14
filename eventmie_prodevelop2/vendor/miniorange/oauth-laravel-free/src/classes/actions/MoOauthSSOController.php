@@ -169,7 +169,7 @@ class MoOauthSSOController extends Controller {
 
                             $name_column_exists = $user->getConnection()->getSchemaBuilder()->hasColumn($user->getTable(),'name');
                             if($name_column_exists) {
-                                $user->name = $username_attr;
+                                $user->name = $resourceOwner['name'];
                             }
                             $user->password = Hash::make(Str::random(8));
                             // $user->role_id = 2;
@@ -340,7 +340,7 @@ class MoOauthSSOController extends Controller {
                             $username_attr = $username;
                                     $redirect_to = str_replace('ssologin.php','', $redirect_to);
                             $user = User::where('email', $username_attr)->first();
-
+                            // var_dump($resourceOwner['name']);die();
                             if ($user == null ) { // Create User if not existing
                                 $user = new User();
                                 $user->email = $username_attr;
@@ -349,7 +349,7 @@ class MoOauthSSOController extends Controller {
 
                             $name_column_exists = $user->getConnection()->getSchemaBuilder()->hasColumn($user->getTable(),'name');
                             if($name_column_exists) {
-                                $user->name = $username_attr;
+                                $user->name = $resourceOwner['name'];
                             }
                             $user->password = Hash::make(Str::random(8));
 

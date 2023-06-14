@@ -414,6 +414,8 @@ Route::group([
         Route::get('/video/detail', "$contestVideocontroller@detail")->name('contestvideo.detail');
 
         Route::post('/store', "$contestVideocontroller@storeVideo")->name('contestvideo.store');
+
+        Route::post('/api/updatevote', "$contestVideocontroller@updateVode")->name('contestvideo.updatevode');
     });
 
 

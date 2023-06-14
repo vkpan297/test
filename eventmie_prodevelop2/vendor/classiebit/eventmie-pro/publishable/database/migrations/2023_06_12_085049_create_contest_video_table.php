@@ -19,7 +19,10 @@ class CreateContestVideoTable extends Migration
 			$table->integer('customer_id')->nullable();
             $table->string('title')->nullable();
             $table->text('description')->nullable();
+            $table->string('poster', 256)->nullable();
             $table->string('link_video')->nullable();
+            $table->string('video_type', 256)->nullable();
+            $table->integer('vote_count')->nullable()->default(0);
 			$table->timestamps();
         });
     }
