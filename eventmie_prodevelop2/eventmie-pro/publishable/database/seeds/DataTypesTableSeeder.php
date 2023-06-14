@@ -233,6 +233,28 @@ class DataTypesTableSeeder extends Seeder
             ])->save();
         // }
         
+        $singular       = 'contest';
+        $slug           = 'contest';
+        $dataType       = $this->dataType('slug', $slug);
+        // if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => $slug,
+                'slug'                  => $slug,
+                'display_name_singular' => ucfirst($singular),
+                'display_name_plural'   => ucfirst($slug),
+
+                'icon'                  => 'voyager-dollar',
+                'model_name'            => 'Classiebit\\Eventmie\\Models\\Contest',
+                'policy_name'           => NULL,
+                'controller'            => '\\Classiebit\\Eventmie\\Http\\Controllers\\Voyager\\ContestsController',
+                'description'           => NULL,
+                'generate_permissions'  => 1,
+                'server_side'           => 1,
+                'details'               => json_decode('{"order_column":"updated_at","order_display_column":"id","order_direction":"desc","default_search_key":"event_title","scope":null}'),
+            ])->save();
+        // }
+        
+
         $singular       = 'commission';
         $slug           = 'commissions';
         $dataType       = $this->dataType('slug', $slug);

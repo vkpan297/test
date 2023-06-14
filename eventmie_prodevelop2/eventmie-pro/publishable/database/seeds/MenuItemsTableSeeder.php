@@ -41,8 +41,14 @@ class MenuItemsTableSeeder extends Seeder
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-calendar", "color" => "#000000", "parent_id" => null, "order" => "4", ])->save();
         }
 
-        // Bookings
-        $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Bookings", "url" => "", "route" => "voyager.bookings.index", ]);
+        // // Bookings
+        // $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Bookings", "url" => "", "route" => "voyager.bookings.index", ]);
+        // if (!$menuItem->exists) {
+        //     $menuItem->fill(["target" => "_self", "icon_class" => "voyager-dollar", "color" => "", "parent_id" => null, "order" => "5", ])->save();
+        // }
+
+        // Contests
+        $menuItem = MenuItem::firstOrNew(["menu_id" => $menu->id, "title" => "Contests", "url" => "", "route" => "voyager.contest.index", ]);
         if (!$menuItem->exists) {
             $menuItem->fill(["target" => "_self", "icon_class" => "voyager-dollar", "color" => "", "parent_id" => null, "order" => "5", ])->save();
         }

@@ -90,5 +90,4 @@ class ContestVideoController extends Controller
         // $user = $this->user->find($videotItem->customer_id);
         // return Eventmie::view($view, compact('videotItem','user'));
     }
-
 }

@@ -20,14 +20,14 @@ use Auth;
 
 use Classiebit\Eventmie\Models\Commission;
 
-class BookingsController extends VoyagerBaseController
+class ContestsController extends VoyagerBaseController
 {
     use BreadRelationshipParser;
 
     public function __construct()
     {
         // disable modification functions that are not managed from admin panel
-        $route_name     = "voyager.bookings";
+        $route_name     = "voyager.contest";
         $enable_routes = [
             "$route_name.index", 
             "$route_name.show", 
@@ -37,7 +37,7 @@ class BookingsController extends VoyagerBaseController
         ];
         if(! in_array(\Route::current()->getName(), $enable_routes))
         {
-            return redirect()->route('voyager.bookings.index')->send();
+            return redirect()->route('voyager.contest.index')->send();
         }
         // ---------------------------------------------------------------------
 
@@ -59,17 +59,20 @@ class BookingsController extends VoyagerBaseController
     {
         // GET THE SLUG, ex. 'posts', 'pages', etc.
         $slug = $this->getSlug($request);
-
+        
         // GET THE DataType based on the slug
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
+        
         // Check permission
-        $this->authorize('browse', app($dataType->model_name));
+       
+        // $this->authorize('browse', app($dataType->model_name));
+
+        
 
         $getter = $dataType->server_side ? 'paginate' : 'get';
 
-        $search = (object) ['value' => $request->get('s'), 'key' => $request->get('key'), 'filter' => $request->get('filter')];
-
+        $search = (object) ['value' => $request->get('s'), 'key' => $request->get('key'), 'filter' => $request->get('filter')];   
+        // return $dataType;
         $searchNames = [];
         if ($dataType->server_side) {
             $searchable = SchemaManager::describeTable(app($dataType->model_name)->getTable())->pluck('name')->toArray();
@@ -185,7 +188,7 @@ class BookingsController extends VoyagerBaseController
         // if have booking email data then send booking notification
         $is_success = !empty(session('booking_email_data')) ? 1 : 0;
         
-        $view = 'eventmie::vendor.voyager.bookings.browse';
+        $view = 'eventmie::vendor.voyager.contest.browse';
         // return response()->json([
         //     'actions' => $actions,
         //     'dataType' => $dataType,
@@ -231,7 +234,7 @@ class BookingsController extends VoyagerBaseController
         $slug = $this->getSlug($request);
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
+        
         // Compatibility with Model binding.
         $id = $id instanceof \Illuminate\Database\Eloquent\Model ? $id->{$id->getKeyName()} : $id;
 

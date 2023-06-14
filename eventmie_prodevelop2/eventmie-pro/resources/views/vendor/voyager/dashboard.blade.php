@@ -83,7 +83,7 @@
                     <div class="box">
                         <i class="voyager-ticket text-center"></i>
                         <div class="info">
-                            <h3>{{ $total_bookings}}</h3> <p>{{ __('voyager::generic.Bookings') }}</p>
+                            <h3>{{ $total_contests}}</h3> <p>{{ __('voyager::generic.Contests') }}</p>
                         </div>
                     </div>
                 </div>

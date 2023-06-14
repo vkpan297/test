@@ -236,6 +236,21 @@ Route::group([
         Route::post('/api/booking_customers', "$controller@get_customers")->name('get_customers');
     });
 
+     /* My Contests (organizer) */
+     Route::prefix('/contest')->group(function () use ($namespace)  {
+        $controller = $namespace.'\OContestsController';
+
+        Route::get('/', "$controller@index")->name('obookings_index');
+        Route::get('/contest/{id}', "$controller@organiser_bookings_show")->name('ocontests_organiser_contests_show');
+        Route::get('/delete/{id}', "$controller@delete_booking")->name('obookings_organiser_booking_delete');
+
+        // API
+        Route::get('/api/organiser_bookings', "$controller@organiser_bookings")->name('obookings_organiser_bookings');
+        Route::post('/api/organiser_bookings_edit', "$controller@organiser_bookings_edit")->name('obookings_organiser_bookings_edit');
+
+        Route::post('/api/booking_customers', "$controller@get_customers")->name('get_customers');
+    });
+
     /* My Earnings (organiser) */
     Route::prefix('/myearning')->group(function () use ($namespace)  {
         $controller     = $namespace.'\MyEarningsController';
@@ -412,7 +427,6 @@ Route::group([
         Route::get('/video', "$contestVideocontroller@index")->name('contestvideo.index');
 
         Route::get('/video/detail', "$contestVideocontroller@detail")->name('contestvideo.detail');
-
         Route::post('/store', "$contestVideocontroller@storeVideo")->name('contestvideo.store');
 
         Route::post('/api/updatevote', "$contestVideocontroller@updateVode")->name('contestvideo.updatevode');
